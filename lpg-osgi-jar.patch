@@ -1,0 +1,24 @@
+--- lpg-java-runtime/META-INF/MANIFEST.MF	2009-05-18 23:09:59.000000000 +0100
++++ lpg-java-runtime/META-INF/MANIFEST.MF	2009-07-04 16:26:41.204699558 +0100
+@@ -2,7 +2,7 @@
+ Bundle-ManifestVersion: 2
+ Bundle-Name: LPG Java Runtime
+ Bundle-SymbolicName: lpg.runtime
+-Bundle-ClassPath: lpgruntime.jar
++Bundle-ClassPath: .
+ Bundle-Version: 2.0.17
+ Bundle-Vendor: pcharles@us.ibm.com
+ Bundle-Localization: plugin
+--- lpg-java-runtime/exportPlugin.xml	2009-02-18 23:14:10.000000000 +0000
++++ lpg-java-runtime/exportPlugin.xml	2009-07-04 16:41:44.509545672 +0100
+@@ -70,9 +70,6 @@
+         <!-- Copy necessary resources -->
+ 
+ 		<jar destfile="lpgruntime.jar" basedir="${temp.folder}/bin"
+-			 includes="**/*.class,**/*.properties"/>
+-		<jar destfile="${build.result.folder}/${plugin.jar.name}" basedir="${basedir}"
+-			 manifest="META-INF/MANIFEST.MF"
+-			includes="lpgruntime.jar"/>
++			 includes="**/*.class,**/*.properties" manifest="${basedir}/META-INF/MANIFEST.MF"/>
+ 	</target>
+ </project>

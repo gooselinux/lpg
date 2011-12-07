@@ -1,0 +1,11 @@
+--- lpg-generator-cpp/src/Makefile	2009-04-27 23:58:38.000000000 +0100
++++ lpg-generator-cpp/src/Makefile	2009-04-27 23:59:28.000000000 +0100
+@@ -26,7 +26,7 @@
+ GEN_FILES=jikespg_sym.h jikespg_def.h jikespg_prs.h jikespg_prs.cpp jikespg_act.h jikespg_act.cpp jikespg_init.cpp
+ 
+ bootstrap: jikespg.g
+-	../bin/lpg jikespg.g
++	../bin/$(TARGET) jikespg.g
+ 	$(RM) jikespg.l
+ 
+ # DO NOT DELETE THIS LINE -- make depend depends on it.

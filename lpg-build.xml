@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="lpg" default="all" basedir=".">
+	<target name="init">
+		<property name="srcdir" value="lpgjavaruntime/"/>
+		<property name="bindir" value="bin/"/>
+		<property name="jarname" value="lpgjavaruntime.jar"/>
+	</target>
+
+	<target name="all" depends="init">
+		<echo message="basedir = ${basedir}"/>
+
+		<!-- compile the source code -->
+		<delete dir="${bindir}"/>
+		<mkdir dir="${bindir}"/>
+		<javac destdir="${bindir}" failonerror="true" includeAntRuntime="no" source="1.5" target="1.5">
+			<src path="${srcdir}"/>
+		</javac>
+
+		<!-- make jar file -->
+		<delete file="${jarname}"/>
+		<jar destfile="${jarname}" basedir="${bindir}" includes="**/*.class"
+			manifest="MANIFEST.MF"/>
+	</target>
+</project>
